@@ -39,7 +39,7 @@
     \makebox[\width][l]{\textit{#3}} \vspace{5pt}\\
     \noindent
     \parbox[t][\height][c]{\textwidth}{\small{#4}}
-    \vspace{-6pt}
+	\vspace{-1pt}
 }
 
 \newcommand{\ExperienceEntry}[5]{
@@ -50,7 +50,7 @@
     \makebox[\width][l]{\textit{#4}} \vspace{5pt}\\
     \noindent
     \parbox[t][\height][c]{\textwidth}{\small{#5}}
-	\vspace{-6pt}
+	\vspace{-1pt}
 }
 
 \newcommand{\ProjectEntry}[5]{
