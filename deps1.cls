@@ -42,13 +42,25 @@
     \vspace{-6pt}
 }
 
-\newcommand{\ExperienceEntry}[4]{
+\newcommand{\ExperienceEntry}[5]{
+    \noindent\makebox[\width][l]{#1} \hfill
+    \makebox[\width][l]{#2} \\
+    \noindent\makebox[\width][l]{#3} \hfill \\
+    \indent
+    \makebox[\width][l]{\textit{#4}} \vspace{5pt}\\
+    \noindent
+    \parbox[t][\height][c]{\textwidth}{\small{#5}}
+	\vspace{-6pt}
+}
+
+\newcommand{\ProjectEntry}[5]{
     \noindent\makebox[\width][l]{#1} \hfill
     \makebox[\width][l]{#2} \\
     \indent
-    \makebox[\width][l]{\textit{#3}} \vspace{5pt}\\
+    \makebox[\width][l]{\textit{#4}} \vspace{5pt}\\
     \noindent
-    \parbox[t][\height][c]{\textwidth}{\small{#4}}
+    \parbox[t][\height][c]{\textwidth}{\small{#5}}
+	\vspace{-6pt}
 }
 
 \newcommand{\ProgrammingEntry}[2]{
