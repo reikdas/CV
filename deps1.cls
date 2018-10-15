@@ -23,7 +23,7 @@
 \newlength{\spacebox} % define a new length
 \settowidth{\spacebox}{8888888888}          % Box to align text
 \newcommand{\PersonalEntry}[2]{
-    \noindent\hangindent=4cm\hangafter=0 % Indentation
+    \noindent\hangindent=10cm\hangafter=0 % Indentation
     \makebox[5em][l]{\textit{#1}}
     \hspace{1em}
     \makebox[\width][l]{#2} \par
