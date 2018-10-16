@@ -39,7 +39,7 @@
     \makebox[\width][l]{\textit{#3}} \vspace{5pt}\\
     \noindent
     \parbox[t][\height][c]{\textwidth}{\small{#4}}
-	\vspace{-1pt}
+	\vspace{-14pt}
 }
 
 \newcommand{\ExperienceEntry}[5]{
