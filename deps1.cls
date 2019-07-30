@@ -93,9 +93,9 @@
  %   \noindent\rule{\textwidth}{0.4pt} \par
  %   \vspace{5pt}
     \Line \par
-    \vspace{5pt}
-    \textbf{\fontsize{20}{20}\selectfont #1} \par
-    \vspace{-5pt}
+    \vspace{2pt}
+    \textbf{\fontsize{14}{14}\selectfont #1} \par
+    \vspace{-7pt}
     \Line \par
     \vspace{5pt}
 }
