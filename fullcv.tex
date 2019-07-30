@@ -3,6 +3,9 @@
 % Preamble
 %
 \usepackage{graphicx}
+\usepackage{paracol}
+
+\setlength{\columnseprule}{0.2pt}
 
 %
 % Document Environment
@@ -30,6 +33,7 @@
 %
 \vspace{15pt}
 \Section{Education}
+\vspace{-6pt}
 \EducationEntry{\textbf{Institute of Engineering and Management, Kolkata}}{2017-2021(Expected)}{Bachelor of Technology in Computer Science and Engineering}{}\\
 \EducationEntry{\textbf{Don Bosco School, Park Circus}}{2002-2016}{Council for the Indian School Certificate Examinations}{}
 \vspace{-10pt}
@@ -38,34 +42,54 @@
 % Professional Experience
 %
 \Section{Experience}
-\ExperienceEntry{\textbf{Fermi National Accelerator Laboratory}}{June, 2018 - September, 2018}{Visiting Scientist - DIANA-HEP Fellow; Worked at the LHC Physics Centre as a part of the CMS Collaboration}{Mentor - Jim Pivarski(Princeton University)}{
+\vspace{-4pt}
+\ExperienceEntry{\textbf{Fermi National Accelerator Laboratory}}{June, 2018 - September, 2018}{Mentor - Jim Pivarski(Princeton University)}{DIANA-HEP Fellow; Visiting Scientist at the LHC Physics Centre as a part of the CMS Collaboration}{
 	\vspace{-10pt}
 	\begin{tightitemize}
     	\item uproot - ROOT IO Software in Python which streams all data as numpy arrays
-            \subitem - Examined ROOT serialization of simple objects.
+            \subitem - Examined ROOT serialization of objects.
         	\subitem - Added functionality to write ROOT files with strings and histograms.
 	\end{tightitemize}
-} \vspace{5pt}\\
-\ExperienceEntry{\textbf{DIANA-HEP}}{June, 2017 - August, 2017}{Summer Student(Worked from home)}{Mentor - Jim Pivarski(Princeton University), Viktor Khristenko(CERN)}{
+}
+\vspace{-10pt}
+\ExperienceEntry{}{June, 2019 - September, 2019}{}{IRIS-HEP Fellow; Visiting Scientist at the LHC Physics Centre as a part of the CMS Collaboration}{
+      \vspace{-10pt}
+      \begin{tightitemize}
+          \item uproot -
+              \subitem - Added functionality to write ROOT files with TTrees.
+      \end{tightitemize}
+} \vspace{-2pt}\\
+\ExperienceEntry{\textbf{DIANA-HEP}}{June, 2017 - August, 2017}{Mentor - Jim Pivarski(Princeton University), Viktor Khristenko(CERN)}{Summer Student(Worked from home)}{
     \vspace{-10pt}
     \begin{tightitemize}
     	\item spark-root - Apache Spark datasource for ROOT
         	\subitem - Separated spark bindings from TTree reading code
-            \subitem - Implemented Unit Tests
         \item root4j - ROOT library in Java
         	\subitem - Optimized codebase to facilitate interoperability
     \end{tightitemize}
 }
-\vspace{-1pt}
+\vspace{-3pt}
+
+%
+% Workshops and Summer Schools
+%
+\Section{Workshops and Summer Schools}
+\vspace{-5pt}
+\EducationEntry{\textbf{CoDaS-HEP}}{2019}{Princeton University}{}\\
+\vspace{-20pt}
 
 %
 % Programming Skills
 %
 \Section{Programming Skills}
+\begin{paracol}{2}
 \vspace{-5pt}
 \ProgrammingEntry{\textbf{Experienced}}{\textbullet{} Python}\\
-\ProgrammingEntry{\textbf{Familiar}}{\textbullet{} Java \textbullet{} Scala \textbullet{} ROOT}
-\vspace{-5pt}
+\ProgrammingEntry{\textbf{Familiar}}{\textbullet{} Java \textbullet{} C \textbullet{} Go}\\
+\switchcolumn
+\ProgrammingEntry{\textbf{Libraries/Frameworks}}{\textbullet{} numpy \textbullet{} ROOT \textbullet{} git}
+\end{paracol}
+\vspace{-11pt}
 
 %
 % Publications
@@ -79,9 +103,11 @@
 % Presentations
 %
 \Section{Presentations}
+\vspace{-5pt}
 \PresentationEntry{\textbullet{} Writing files with uproot}{\small{-ROOT Users' Workshop (Academy of Sciences and Arts of Bosnia and Herzegovina)}} \hfill{2018}\\
 \hspace*{1ex}\hspace*{1ex}\hspace*{1ex}\hspace*{1ex}\hspace*{1ex}\hspace*{1ex}\hspace*{1ex}\hspace*{0.4ex}\textit{{\small {-DIANA Meeting: Updates on ROOT I/O(Vidyo)}}}\hfill{2018}\\
 \PresentationEntry{\textbullet{} Separation of Concerns - Refactoring code between ROOT4J and Spark-Root}{\small{-DIANA Meeting: Student Projects(Vidyo); CMS Big Data Science Projects(Vidyo)}}\hfill{2017}
+\vspace{-3pt}
 
 %
 % Patents

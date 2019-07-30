@@ -6,3 +6,6 @@ _region_.tex
 fullcv.aux
 fullcv.log
 fullcv.out
+fullcv.fdb_latexmk
+fullcv.fls
+texput.log
