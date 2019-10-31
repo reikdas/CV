@@ -10,7 +10,7 @@
 %
 %   Package Imports
 %
-\usepackage[hmargin=1.5cm, vmargin=1.5cm]{geometry}
+\usepackage[hmargin=1cm, vmargin=0.985cm]{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage[absolute]{textpos} %TPHorizontal....
 \usepackage{anyfontsize} % to control fonts
@@ -93,11 +93,11 @@
  %   \noindent\rule{\textwidth}{0.4pt} \par
  %   \vspace{5pt}
     \Line \par
-    \vspace{2pt}
-    \textbf{\fontsize{14}{14}\selectfont #1} \par
+    \vspace{1pt}
+    \textbf{\fontsize{13}{13}\selectfont #1} \par
     \vspace{-7pt}
     \Line \par
-    \vspace{5pt}
+    \vspace{3pt}
 }
 
 \newcommand{\Line}{
