@@ -47,7 +47,7 @@
     \makebox[\width][l]{#2} \\
     \noindent\makebox[\width][l]{#3} \hfill \\
     \indent
-    \makebox[\width][l]{\textit{#4}} \vspace{5pt}\\
+    \makebox[\width][l]{#4} \vspace{5pt}\\
     \noindent
     \parbox[t][\height][c]{\textwidth}{\small{#5}}
 	\vspace{-1pt}
