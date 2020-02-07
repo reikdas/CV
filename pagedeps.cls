@@ -1,7 +1,7 @@
 %
 % Class with dependencies for my CV
 %
-\ProvidesClass{deps1}[2016/09/04 Dependency Class]
+\ProvidesClass{pagedeps}[2016/09/04 Dependency Class]
 \NeedsTeXFormat{LaTeX2e}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax

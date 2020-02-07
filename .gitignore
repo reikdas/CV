@@ -1,11 +1,6 @@
-cv1.aux
-cv1.log
-cv1.out
-_region_.log
+*.aux
+*.log
+*.out
 _region_.tex
-fullcv.aux
-fullcv.log
-fullcv.out
-fullcv.fdb_latexmk
-fullcv.fls
-texput.log
+*.fdb_latexmk
+*.fls
