@@ -26,7 +26,7 @@
     \noindent\hangindent=10cm\hangafter=0 % Indentation
     \makebox[5em][l]{\textit{#1}}
     \hspace{1em}
-    \makebox[\width][l]{#2} \par
+    \mbox{#2} \par
 }
 
 %
@@ -37,34 +37,33 @@
     \mbox{#2} \\
     \indent
     \mbox{\textit{#3}} \vspace{5pt}\\
-    \noindent
     \parbox[t][\height][c]{\textwidth}{\small{#4}}
 	\vspace{-14pt}
 }
 
 \newcommand{\ExperienceEntry}[5]{
-    \noindent\makebox[\width][l]{#1} \hfill
+    \noindent\mbox{#1} \hfill
     \mbox{#2} \\
-    \noindent\makebox[\width][l]{#3} \hfill \\
+    \if\relax\detokenize{#3}\relax\else
+    \mbox{#3}\\
+    \fi
     \indent
     \mbox{#4} \vspace{5pt}\\
-    \noindent
     \parbox[t][\height][c]{\textwidth}{\small{#5}}
 	\vspace{-1pt}
 }
 
 \newcommand{\ProjectEntry}[5]{
-    \noindent\makebox[\width][l]{#1} \hfill
+    \noindent\mbox{#1} \hfill
     \mbox{#2} \\
     \indent
     \mbox{\textit{#4}} \vspace{5pt}\\
-    \noindent
     \parbox[t][\height][c]{\textwidth}{\small{#5}}
 	\vspace{-6pt}
 }
 
 \newcommand{\ProgrammingEntry}[2]{
-    \noindent\makebox[\width][l]{#1} \\
+    \noindent\mbox{#1} \\
     \indent
     \mbox{\textit{#2}}
 }
@@ -76,11 +75,11 @@
 }
 
 \newcommand{\PublicationEntry}[1]{
-    \noindent\makebox[\width][l]{#1}
+    \noindent\mbox{#1}
 }
 
 \newcommand{\AthleticEntry}[3]{
-    \noindent\makebox[\width][l]{#1} \hfill
+    \noindent\mbox{#1} \hfill
     \mbox{#2} \\
     \parbox[t][\height][c]{\textwidth}{\textit{#3}}
 }
