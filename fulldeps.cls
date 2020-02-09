@@ -33,10 +33,10 @@
 % cmd to create an education entry
 %
 \newcommand{\EducationEntry}[4]{
-    \noindent\makebox[\width][l]{#1} \hfill
-    \makebox[\width][l]{#2} \\
+    \noindent\mbox{#1} \hfill
+    \mbox{#2} \\
     \indent
-    \makebox[\width][l]{\textit{#3}} \vspace{5pt}\\
+    \mbox{\textit{#3}} \vspace{5pt}\\
     \noindent
     \parbox[t][\height][c]{\textwidth}{\small{#4}}
 	\vspace{-14pt}
@@ -44,10 +44,10 @@
 
 \newcommand{\ExperienceEntry}[5]{
     \noindent\makebox[\width][l]{#1} \hfill
-    \makebox[\width][l]{#2} \\
+    \mbox{#2} \\
     \noindent\makebox[\width][l]{#3} \hfill \\
     \indent
-    \makebox[\width][l]{#4} \vspace{5pt}\\
+    \mbox{#4} \vspace{5pt}\\
     \noindent
     \parbox[t][\height][c]{\textwidth}{\small{#5}}
 	\vspace{-1pt}
@@ -55,9 +55,9 @@
 
 \newcommand{\ProjectEntry}[5]{
     \noindent\makebox[\width][l]{#1} \hfill
-    \makebox[\width][l]{#2} \\
+    \mbox{#2} \\
     \indent
-    \makebox[\width][l]{\textit{#4}} \vspace{5pt}\\
+    \mbox{\textit{#4}} \vspace{5pt}\\
     \noindent
     \parbox[t][\height][c]{\textwidth}{\small{#5}}
 	\vspace{-6pt}
@@ -66,12 +66,12 @@
 \newcommand{\ProgrammingEntry}[2]{
     \noindent\makebox[\width][l]{#1} \\
     \indent
-    \makebox[\width][l]{\textit{#2}}
+    \mbox{\textit{#2}}
 }
 
 \newcommand{\PresentationEntry}[2]{
     \indent
-    \makebox[\width][l]{#1} \\
+    \mbox{#1} \\
     \indent\indent\makebox[\width][l]{\textit{#2}}
 }
 
@@ -81,7 +81,7 @@
 
 \newcommand{\AthleticEntry}[3]{
     \noindent\makebox[\width][l]{#1} \hfill
-    \makebox[\width][l]{#2} \\
+    \mbox{#2} \\
     \parbox[t][\height][c]{\textwidth}{\textit{#3}}
 }
 
