@@ -4,3 +4,4 @@
 _region_.tex
 *.fdb_latexmk
 *.fls
+*.synctex.gz
