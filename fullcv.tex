@@ -36,8 +36,9 @@
 \vspace{10pt}
 \Section{Education}
 \vspace{-4pt}
-\EducationEntry{\textbf{Institute of Engineering \& Management, Kolkata}}{2017-2021 (Expected)}{Bachelor of Technology in Computer Science and Engineering. CGPA: 8.43/10}{}\\
-\EducationEntry{\textbf{Don Bosco School, Park Circus, Kolkata}}{2016}{High School (Council For The Indian School Certificate Examinations)}{}
+\EducationEntry{\textbf{Purdue University}}{2021 -}{PhD in Computer Science}{}\\
+\EducationEntry{\textbf{Institute of Engineering \& Management, Kolkata}}{2017 - 2021 (Expected)}{Bachelor of Technology in Computer Science and Engineering. CGPA: 8.7/10}{}
+%\EducationEntry{\textbf{Don Bosco School, Park Circus, Kolkata}}{2016}{High School (Council For The Indian School Certificate Examinations)}{}
 \vspace{-10pt}
 
 %
@@ -45,6 +46,13 @@
 %
 \Section{Work Experience}
 \vspace{-4pt}
+\ExperienceEntry{\textbf{Google Summer of Code - Student}}{June, 2021 - August, 2021}{The LLVM Compiler Infrastructure Organization}{Supervisors - William Moses (MIT), Dr. Johannes Doerfert (Argonne National Laboratory)}{
+    \vspace{-10pt}
+    \begin{tightitemize}
+    \item \href{https://enzyme.mit.edu/}{Enzyme}: LLVM Pass to perform automatic differentiation of statically analyzable LLVM IR
+        \subitem - Integrate custom derivatives of Numerical Computing routines like BLAS and Eigen into Enzyme.
+    \end{tightitemize}
+}\vspace{1pt}\\
 \ExperienceEntry{\textbf{{\href{https://iris-hep.org/}{IRIS-HEP}} - Fellow}}{June, 2020 - September, 2020}{}{Supervisor - Dr. Jim Pivarski (Princeton University)}{
 	\vspace{-10pt}
 	\begin{tightitemize}
@@ -59,7 +67,7 @@
 	\begin{tightitemize}
     \item \href{https://github.com/scikit-hep/uproot3.git}{Uproot}: Python implementation of ROOT I/O, an open source file format storing over an exabyte of HEP data
         \subitem - Completed ROOT file writing interface by adding functionality to write ROOT files with TTrees.
-        \subitem - Uproot has become one of the most widely used Physics libraries (50K+ downloads)
+        \subitem - Uproot has become one of the most widely used Physics libraries (50K+ downloads).
 	\end{tightitemize}
 } \vspace{4pt}\\
 \ExperienceEntry{\textbf{{\href{http://diana-hep.org/}{DIANA-HEP}} - Fellow}}{June, 2018 - September, 2018}{Location: Fermi National Accelerator Laboratory, USA - LHC Physics Centre}{Supervisor - Dr. Jim Pivarski (Princeton University)}{
@@ -72,32 +80,34 @@
 }
 \vspace{-3pt}
 
-\Section{Volunter Research Experience}
+\Section{Volunteer Research Experience}
 \vspace{-4pt}
-\ExperienceEntry{\textit{Supervisor} - Dr. Vassil Vassilev (Princeton University)}{November, 2019 - Present}{}{\textit{Collaborations}: \href{iris-hep.org}{IRIS-HEP}, CERN ROOT Team, \href{https://compiler-research.org/}{Compiler Research group}}{
+\ExperienceEntry{\textit{Supervisor} - Dr. Vassil Vassilev (Princeton University)}{November, 2019 - May, 2021}{}{\textit{Collaborations}: \href{iris-hep.org}{IRIS-HEP}, CERN ROOT Team, \href{https://compiler-research.org/}{Compiler Research group}}{
     \vspace{-10pt}
     \begin{tightitemize}
     \item \textbf{\href{https://github.com/root-project/root}{ROOT}}: An open-source data analysis framework storing over an exabyte of data
         \subitem - Created new unit testing library, ROOTUnitTestSupport
         \subitem - Fixed several rootcling bugs
         \subitem - Fixed packaging for macOS
+        \subitem - Backported several Clang patches from upstream LLVM/Clang
     \item \textbf{\href{https://github.com/root-project/cling}{Cling}}: Interactive C++ interpreter built on top of Clang
         \subitem - Configured installer to build using LLVM binary
-        \subitem - Reconfigured CI
+        \subitem - Fixed CI and moved it from Travis to GitHub Actions
+        \subitem - Maintained cpt.py installer and packager
     \item \textbf{\href{https://clang.llvm.org/}{Clang}}: C language family frontend for LLVM
-        \subitem - Fixed template cast and suffix printing bug (under review)
-        \subitem - Fixed type printing of template arguments (under review)
+        \subitem - Added type information to integral template arguments if required
+        \subitem - Fixed type printing of template arguments
     \item \textbf{\href{https://github.com/vgvassilev/clad}{Clad}}: Clang plugin for automatic differentiation
         \subitem - Moved CI from Travis to Github Actions.
     \end{tightitemize}
-}\vspace{3pt}\\
+}\vspace{4pt}\\
 \ExperienceEntry{\textit{Supervisor} - Dr. Jim Pivarski (Princeton University)}{January, 2021 - February, 2021}{}{\textit{Collaborations}: \href{iris-hep.org}{IRIS-HEP}}{
     \vspace{-10pt}
     \begin{tightitemize}
     \item \textbf{\href{https://github.com/scikit-hep/awkward-1.0}{Awkward Array}}
         \subitem - Created a parser for Awkward Array's type system
     \end{tightitemize}
-} \vspace{-2pt}\\
+} \vspace{-1pt}\\
 \ExperienceEntry{\textit{Supervisors} - Dr. Jim Pivarski (Princeton University), Dr. Viktor Khristenko (CERN)}{June, 2017 - August, 2017}{}{\textit{Collaborations}: CERN CMS Big Data Project, {\href{diana-hep.org}{DIANA-HEP}}}{
     \vspace{-10pt}
     \begin{tightitemize}
@@ -109,8 +119,6 @@
 }
 \vspace{-3pt}
 
-\newpage
-
 %
 % Programming Skills
 %
@@ -118,7 +126,7 @@
 \vspace{-4pt}
 \textbf{Experienced:} Python, C, CUDA, *nix
 
-\textbf{Familiar:} C++, Java, ROOT, Haskell,  Standard ML, LLVM, Clang
+\textbf{Familiar:} C++, Java, Scala, ROOT
 \vspace{-6pt}
 
 %
@@ -126,19 +134,23 @@
 %
 \Section{Summer Schools}
 \vspace{-4pt}
+\EducationEntry{\textbf{{\href{https://www.cs.uoregon.edu/research/summerschool/summer21/index.php}{Oregon Programming Languages Summer School}}}}{2021}{University of Oregon}{}\\
 \EducationEntry{\textbf{{\href{https://codas-hep.org/}{Computational and Data Science for High Energy Physics (CoDaS-HEP)}}}}{2019}{Princeton University}{}\\
 \vspace{-15pt}
 \begin{tightitemize}
 \item Interviewed - \textit{\href{https://www.princeton.edu/news/2019/08/19/princeton-leads-efforts-develop-national-data-training-framework-high-energy}{Princeton University News}}
 \end{tightitemize}
-\vspace{-7pt}
+%\vspace{2pt}
+%\EducationEntry{\textbf{{\href{https://indico.cern.ch/event/822126/}{Fast Machine Learning Workshop}}}}{2019}{Fermi National Accelerator Laboratory}{}\\
+%\vspace{-22pt}
+\vspace{-5pt}
 
 %
 % Publications
 %
 \Section{Publications}
 \small{\begin{tightitemize}
-    \item J.Pivarski, I.Osborne, {\textbf{P.Das}}, D.Lange, P.Elmer, {\href{https://arxiv.org/abs/2102.13516}{``AwkwardForth: accelerating Uproot with an internal DSL''}}, 25th International Conference on Computing in High-Energy and Nuclear Physics (vCHEP, 2021). \emph{[Submitted]} \hfill{2021}
+    \item J.Pivarski, I.Osborne, {\textbf{P.Das}}, D.Lange, P.Elmer, {\href{https://arxiv.org/abs/2102.13516}{``AwkwardForth: accelerating Uproot with an internal DSL''}}, 25th International Conference on Computing in High-Energy and Nuclear Physics (vCHEP, 2021). \emph{[Accepted]} \hfill{2021}
     \item J.Pivarski, I.Osborne, {\textbf{P.Das}}, A.Biswas, P.Elmer, {\href{http://conference.scipy.org/proceedings/scipy2020/jim_pivarski.html}{``Awkward Array: JSON-like data, NumPy-like idioms''}}, Proceedings of the 19th Python in Science Conference (SciPy USA, 2020), Pages 68-74, DOI: 10.25080/Majora-342d178e-00b. \hfill{2020}
     \item E.Rodrigues, et al., {\href{https://www.epj-conferences.org/articles/epjconf/abs/2020/21/epjconf_chep2020_06028/epjconf_chep2020_06028.html}{``The Scikit HEP Project - overview and prospects``}}, Proceedings of the 24th International Conference on Computing in High Energy and Nuclear Physics (CHEP 2019), DOI: 10.1051/epjconf/202024506028.  \hfill{2020}
     \item N.Saha, {\textbf{P.Das}}, H.N.Saha, {\href{https://www.inderscienceonline.com/doi/abs/10.1504/IJAPR.2018.094819}{``Authorship Attribution of Short Texts using a Multi Layer Perceptron''}}, International Journal of Applied Pattern Recognition, 2018 Vol. 5 No. 3, Pages 251-259, DOI: 10.1504/IJAPR.2018.10016100. \hfill{2018}
@@ -151,12 +163,12 @@
 \vspace{-4pt}
 \PresentationEntry{\textbullet{} {\href{https://youtu.be/jClVsR6XfdI}{Python in High Energy Physics.}}}{\small{-{\href{https://us.pycon.org/2020/}{PyCon USA}} (Remote)}} \hfill{2020}\\
 \PresentationEntry{\textbullet{} {\href{https://static.fossee.in/scipy2019/SciPyTalks/SciPyIndia2019_S008_Python_in_High_Energy_Physics_20191130.mp4}{Python in High Energy Physics}}}{\small{-{\href{https://scipy.in/2019}{SciPy India}} (Indian Institute of Technology, Bombay)}} \hfill{2019}\\
-\PresentationEntry{\textbullet{} {\href{https://indico.cern.ch/event/773049/contributions/3476182/attachments/1938227/3213768/EduardoRodrigues_2019-11-05_CHEP2019Adelaide.pdf}{The Scikit-HEP Project: Overview and Prospects} - \underline{Eduardo Rodrigues} et al.}}{\small{-{\href{http://chep2019.org/}{24th International Conference on Computing in High Energy and Nuclear Physics}} (University of Adelaide)}} \hfill{2019}\\
+%\PresentationEntry{\textbullet{} {\href{https://indico.cern.ch/event/773049/contributions/3476182/attachments/1938227/3213768/EduardoRodrigues_2019-11-05_CHEP2019Adelaide.pdf}{The Scikit-HEP Project: Overview and Prospects} - \underline{Eduardo Rodrigues} et al.}}{\small{-{\href{http://chep2019.org/}{24th International Conference on Computing in High Energy and Nuclear Physics}} (University of Adelaide)}} \hfill{2019}\\
 \PresentationEntry{\textbullet{} {\href{https://indico.cern.ch/event/833895/contributions/3577892/attachments/1927752/3191883/uproot-pyhep.pdf}{Writing files with uproot}}}{\small{-{\href{https://indico.cern.ch/event/833895/}{PyHEP}} (Abington, UK)}} \hfill{2019}\\
 \PresentationEntry{\textbullet{} {\href{https://indico.cern.ch/event/697389/contributions/3102807/attachments/1713054/2762448/Writing_files_with_uproot.pdf}{Writing files with uproot}}}{\small{-{\href{https://indico.cern.ch/event/697389/}{ROOT Users' Workshop}} (Academy of Sciences and Arts of Bosnia and Herzegovina)}} \hfill{2018}\\
 \vspace{-15pt}
 
-\Section{Talks at Meetings}
+\Section{Talks at Public Meetings}
 \vspace{-4pt}
 \PresentationEntry{\textbullet{} {\href{https://indico.cern.ch/event/946427/}{Language Transformations for the Awkward Array library}}}{\small{-{\href{https://indico.cern.ch/event/946427/contributions/3976986/attachments/2094014/3519161/IRIS-HEP-Fellow-Awkward.pdf}{IRIS-HEP Fellow Presentations}} (Remote)}} \hfill{2020}\\
 \PresentationEntry{\textbullet{} CUDA backend for the Awkward Array project}{-Princeton University Liberty Research Group Meeting (Remote)} \hfill{2020}\\
@@ -179,12 +191,15 @@
 %
 \Section{Academic Achievements}
 \begin{tightitemize}
+    \item Awarded PLMW scholarship to attend POPL, 2021. \hfill{2021}
+    \item Awarded PLMW scholarship to attend ICFP, 2020. \hfill{2020}
+    \item Awarded PLMW scholarship to attend PLDI, 2020. \hfill{2020}
     \item Awarded the IRIS-HEP undergraduate fellowship by Princeton University. \hfill{2020}
-    \item Awarded travel grant to speak at PyCon USA 2020 in Pittsburgh, USA. \hfill{2020}
-    \item Awarded travel grant to attend PLMW and POPL 2020 in New Orleans, USA. \hfill{2019}
+    \item Awarded travel grant to speak at PyCon USA, 2020 in Pittsburgh, USA. \hfill{2020}
+    \item Awarded PLMW scholarship to travel to and attend POPL, 2020 in New Orleans, USA. \hfill{2020}
     \item Awarded travel grant to attend CoDaS-HEP summer school at Princeton University. \hfill{2019}
     \item Awarded the IRIS-HEP undergraduate fellowship by Princeton University. \hfill{2019}
-    \item Awarded travel grant to speak at ROOT Users' Workshop 2018 in Sarajevo, Bosnia and Herzegovina. \hfill{2018}
+    \item Awarded travel grant to speak at ROOT Users' Workshop, 2018 in Sarajevo, Bosnia and Herzegovina. \hfill{2018}
 	\item Awarded the DIANA-HEP undergraduate fellowship by Princeton University. \hfill{2018}
 \end{tightitemize}
 
