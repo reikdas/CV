@@ -53,37 +53,6 @@
 	\vspace{-1pt}
 }
 
-\newcommand{\ProjectEntry}[5]{
-    \noindent\mbox{#1} \hfill
-    \mbox{#2} \\
-    \indent
-    \mbox{\textit{#4}} \vspace{5pt}\\
-    \parbox[t][\height][c]{\textwidth}{\small{#5}}
-	\vspace{-6pt}
-}
-
-\newcommand{\ProgrammingEntry}[2]{
-    \noindent\mbox{#1} \\
-    \indent
-    \mbox{\textit{#2}}
-}
-
-\newcommand{\PresentationEntry}[2]{
-    \indent
-    \mbox{#1} \\
-    \indent\indent\makebox[\width][l]{\textit{#2}}
-}
-
-\newcommand{\PublicationEntry}[1]{
-    \noindent\mbox{#1}
-}
-
-\newcommand{\AthleticEntry}[3]{
-    \noindent\mbox{#1} \hfill
-    \mbox{#2} \\
-    \parbox[t][\height][c]{\textwidth}{\textit{#3}}
-}
-
 \newcommand{\Section}[1]{
  %   \vspace{5pt}
  %   \noindent\hangindent=0.5cm\hangafter=0
@@ -101,11 +70,6 @@
 
 \newcommand{\Line}{
 \noindent\rule{\textwidth}{0.4pt}}
-
-%
-% cmd to create a keyword
-%
-\newcommand{\CreateKeyword}[1]{\textbf{\textit{#1}}}
 
 %
 %   lastupdated command
