@@ -111,11 +111,11 @@
 \vspace{10pt}
 \Section{Education}
 \vspace{-4pt}
-\EducationEntry{\textbf{Purdue University}}{August, 2021 -}{PhD in Computer Science (Advisor - Professor Tiark Rompf). GPA: 3.77/4.0}{
+\EducationEntry{\textbf{Purdue University}}{August, 2021 -}{PhD in Computer Science (Advisor - Milind Kulkarni)}{
     \vspace{-10pt}
-    \hspace{30pt}Research interests - Generative programming, Automatic parallelization, Static analysis, High performance computing
+    \hspace{30pt}Research interests - Compilers, Automatic parallelization, Sparse tensors, High performance computing
   }\\
-\EducationEntry{\textbf{Institute of Engineering \& Management, Kolkata (MAKAUT)}}{August, 2017 - May, 2021}{Bachelor of Technology in Computer Science and Engineering. CGPA: 8.89/10}{
+\EducationEntry{\textbf{Institute of Engineering \& Management, Kolkata (MAKAUT)}}{August, 2017 - May, 2021}{Bachelor of Technology in Computer Science and Engineering}{
     \vspace{-10pt}
     \hspace{30pt}Awarded the Director's Award for Best Scientific Mind
 }
@@ -124,9 +124,17 @@
 %
 % Professional Experience
 %
-\Section{Research Experience}
+\Section{Experience}
 \vspace{-4pt}
-\ExperienceEntry{\textbf{Research Assisant}}{August, 2021 -}{Purdue University}{Supervisor - Professor Tiark Rompf}{
+\ExperienceEntry{\textbf{Swift Platform Experience - Compiler Intern}}{May, 2023 - August, 2023}{Apple}{Manager - Richard Wei}{
+    \vspace{-10pt}
+    \begin{tightitemize}
+        \item Swift compiler
+            \subitem - Designed a new Intermediate Representation used internally across multiple teams at Apple.
+            \subitem - Extended Swift's code generation and runtime to work with this new Intermediate Representation.
+        \end{tightitemize}
+}\vspace{4pt}\\
+\ExperienceEntry{\textbf{Research Assisant}}{August, 2021 - February, 2023}{Purdue University}{Advisor - Tiark Rompf}{
     \vspace{-10pt}
     \begin{tightitemize}
         \item \href{https://dl.acm.org/doi/10.5555/3291168.3291227}{Flare}: In-memory query compiler backend for Apache Spark using generative programming
@@ -134,14 +142,14 @@
             \subitem - Embedded a MapReduce-like framework in Flare to operate over files in HDFS.
         \end{tightitemize}
 }\vspace{4pt}\\
-\ExperienceEntry{\textbf{Google Summer of Code - Student}}{June, 2021 - August, 2021}{The LLVM Compiler Infrastructure Organization}{Supervisors - William Moses (MIT), Dr. Johannes Doerfert (Argonne National Laboratory)}{
+\ExperienceEntry{\textbf{Google Summer of Code - Student}}{June, 2021 - August, 2021}{The LLVM Compiler Infrastructure Organization}{Supervisors - William Moses, Johannes Doerfert}{
     \vspace{-10pt} \begin{tightitemize}
     \item \href{https://enzyme.mit.edu/}{Enzyme}: LLVM Pass to perform automatic differentiation of statically analyzable LLVM IR
-        \subitem - Integrated custom derivatives of BLAS functions into Enzyme.
+        \subitem - Integrated custom derivatives of several BLAS functions into Enzyme.
         \subitem - Wrote an LLVM pass to inline function definitions from bitcode files into LLVM IR.
     \end{tightitemize}
 }\vspace{4pt}\\
-\ExperienceEntry{\textbf{{\href{https://iris-hep.org/}{IRIS-HEP}} - Fellow}}{June, 2020 - September, 2020}{}{Supervisor - Dr. Jim Pivarski (Princeton University)}{
+\ExperienceEntry{\textbf{{\href{https://iris-hep.org/}{IRIS-HEP}} - Fellow}}{June, 2020 - September, 2020}{Princeton University}{Supervisor - Jim Pivarski}{
 	\vspace{-10pt}
 	\begin{tightitemize}
     \item \href{https://github.com/scikit-hep/awkward-1.0}{Awkward Array}: Library for nested, variable-sized data using NumPy-like idioms
@@ -150,7 +158,7 @@
         \subitem - Created a source to source compiler to generate equivalent parallel CUDA from specification (Python and type info).
 	\end{tightitemize}
 } \vspace{4pt}\\
-\ExperienceEntry{\textbf{{\href{https://iris-hep.org/}{IRIS-HEP}} and \href{https://diana-hep.org/}{DIANA-HEP} - Fellow}}{June, 2018 - September, 2018; June, 2019 - September, 2019}{Location: Fermi National Accelerator Laboratory, USA - LHC Physics Centre}{Supervisor - Dr. Jim Pivarski (Princeton University)}{
+\ExperienceEntry{\textbf{{\href{https://iris-hep.org/}{IRIS-HEP}} and \href{https://diana-hep.org/}{DIANA-HEP} - Fellow}}{June, 2018 - September, 2018; June, 2019 - September, 2019}{Fermi National Accelerator Laboratory and Princeton University}{Supervisor - Jim Pivarski}{
 	\vspace{-10pt}
 	\begin{tightitemize}
     \item \href{https://github.com/scikit-hep/uproot3.git}{Uproot}: Python implementation of ROOT I/O, an open source file format storing over an exabyte of HEP data
@@ -163,14 +171,14 @@
 
 \Section{Other Open Source Contributions}
 \vspace{-4pt}
-\ExperienceEntry{\textit{Supervisors} - Dr. Nikos Vasilakis (MIT), Konstantinos Kallas (UPenn)}{February, 2022 - July, 2022}{}{}{
+\ExperienceEntry{\textit{Supervisors} - Nikos Vasilakis, Konstantinos Kallas}{February, 2022 - July, 2022}{}{}{
     \vspace{-23pt}
     \begin{tightitemize}
     \item \textbf{\href{https://binpash.github.io/web/}{PaSh}}: A system for parallelizing POSIX shell scripts
         \subitem - Helped extend PaSh for distributed file systems (HDFS)
     \end{tightitemize}
 }\vspace{-16pt}\\
-\ExperienceEntry{\textit{Supervisor} - Dr. Vassil Vassilev (Princeton University)}{November, 2019 - May, 2021}{}{}{
+\ExperienceEntry{\textit{Supervisor} - Vassil Vassilev}{November, 2019 - May, 2021}{}{}{
     \vspace{-23pt}
     \begin{tightitemize}
     \item \textbf{\href{https://github.com/root-project/root}{ROOT}}: An open-source data analysis framework storing over an exabyte of data
@@ -181,14 +189,14 @@
         \subitem - Several patches to print type information of C++ template arguments
     \end{tightitemize}
 }\vspace{4pt}\\
-\ExperienceEntry{\textit{Supervisor} - Dr. Jim Pivarski (Princeton University)}{January, 2021 - February, 2021}{}{}{
+\ExperienceEntry{\textit{Supervisor} - Jim Pivarski}{January, 2021 - February, 2021}{}{}{
     \vspace{-23pt}
     \begin{tightitemize}
     \item \textbf{\href{https://github.com/scikit-hep/awkward-1.0}{Awkward Array}} - Library for nested, variable-sized data using NumPy-like idioms
         \subitem - Created a parser for Awkward Array's type system
     \end{tightitemize}
 } \vspace{-16pt}\\
-\ExperienceEntry{\textit{Supervisors} - Dr. Jim Pivarski (Princeton University), Dr. Viktor Khristenko (CERN)}{June, 2017 - August, 2017}{}{}{
+\ExperienceEntry{\textit{Supervisors} - Jim Pivarski, Viktor Khristenko}{June, 2017 - August, 2017}{}{}{
     \vspace{-23pt}
     \begin{tightitemize}
     \item \textbf{\href{https://github.com/diana-hep/spark-root}{spark-root}} - Apache Spark datasource for ROOT
@@ -213,7 +221,7 @@
 \vspace{-4pt}
 \textbf{Experienced:} Python, C, CUDA
 
-\textbf{Familiar:} C++, Java, Scala, Coq, ROOT, Bash, \LaTeX, Swift
+\textbf{Familiar:} C++, Java, Scala, Coq, ROOT, Bash, \LaTeX, Swift, WebAssembly
 \vspace{-6pt}
 
 %
@@ -256,6 +264,11 @@
 \item \href{https://indico.cern.ch/event/840667/contributions/3527109/attachments/1908764/3153297/uproot-irisfellow-final.pdf}{Writing TTrees with uproot} (\href{https://indico.cern.ch/event/840667/}{IRIS-HEP Topical Meeting: Summer student project presentations}) \hfill{2019}
 \item \href{https://indico.cern.ch/event/754335/contributions/3166239/attachments/1734208/2804184/Writing_files_with_uproot_-_DIANA_HEP.pdf}{Writing files with uproot} (\href{https://indico.cern.ch/event/754335/}{DIANA Meeting: Updates on ROOT I/O}) \hfill{2018}
 \item \href{https://indico.cern.ch/event/658754/contributions/2685907/attachments/1506368/2347492/Refactoring_code_from_spark-root_to_root4j.pdf}{Separation of Concerns - Refactoring code between ROOT4J and Spark-Root} (\href{https://indico.cern.ch/event/658754/}{CMS Big Data Science}, \href{https://indico.cern.ch/event/655833/}{DIANA-HEP}) \hfill{2017}
+\end{tightitemize}
+
+\Section{Service}
+\begin{tightitemize}
+\item Artifact Evaluation Committee - SOSP 2023
 \end{tightitemize}
 
 \end{document}
