@@ -7,12 +7,13 @@
 %
 \usepackage{graphicx}
 
-\usepackage[hmargin=1cm, vmargin=1.5cm]{geometry}
+\usepackage[hmargin=1cm, vmargin=1cm]{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage[absolute]{textpos} %TPHorizontal....
 \usepackage{anyfontsize} % to control fonts
 \usepackage{setspace} % to control the spacing between lines
 \usepackage{pbox}
+\usepackage{needspace} % keep section headers with their content
 
 \newlength{\spacebox} % define a new length
 \settowidth{\spacebox}{8888888888}          % Box to align text
@@ -51,6 +52,7 @@
  %   \vspace{-5pt}
  %   \noindent\rule{\textwidth}{0.4pt} \par
  %   \vspace{5pt}
+    \Needspace*{4\baselineskip}
     \Line \par
     \vspace{1pt}
     \textbf{\fontsize{13}{13}\selectfont #1} \par
@@ -76,7 +78,7 @@
 {
     \vspace{-\topsep}
     \begin{itemize}
-        \itemsep2pt \parskip0pt \parsep0pt
+        \itemsep1pt \parskip0pt \parsep0pt
 }
 {
     \end{itemize}
@@ -126,12 +128,21 @@
 %
 \Section{Experience}
 \vspace{-4pt}
-\ExperienceEntry{\textbf{Swift Platform Experience - Compiler Intern}}{May, 2023 - August, 2023}{Apple}{Manager - Richard Wei}{
-    \vspace{-10pt}
+\ExperienceEntry{\textbf{ML Performance (Google Cloud) - Student Researcher}}{May, 2026 - August, 2026}{Google}{}{
+    \vspace{-23pt}
     \begin{tightitemize}
-        \item Swift compiler
-            \subitem - Designed a new Intermediate Representation used internally across multiple teams at Apple.
-            \subitem - Extended Swift's code generation and runtime to work with this new Intermediate Representation.
+        \item XLA TPU compiler: Built out a \textit{fast} static profiler plugin estimating cycles from LLO graphs without running on TPUs
+            \subitem - Broadened HLO operation coverage (e.g. all-reduce) and added support for pipeline and collective emitters.
+            \subitem - Reduced delta against measured TPU runs on Goose, Gemini, and YouTube workloads from over 50\% to $\sim$5\%.
+        \end{tightitemize}
+}\vspace{4pt}\\
+\ExperienceEntry{\textbf{SwiftUI - Compiler Intern}}{May, 2023 - August, 2023}{Apple}{}{
+    \vspace{-23pt}
+    \begin{tightitemize}
+        \item Swift compiler: Worked on the Swift compiler motivated by SwiftUI
+            \subitem - Extended Swift's code generation and runtime, with LLVM patches, to lower SwiftUI to a new target IR.
+            \subitem - Integrated an interpreter into Swift's runtime, enabling live updates of SwiftUI views from newly loaded code.
+            \subitem - Implemented dynamic loading and symbol resolution of system shared libraries for interpreted code.
         \end{tightitemize}
 }\vspace{4pt}\\
 \ExperienceEntry{\textbf{Google Summer of Code - Student}}{June, 2021 - August, 2021}{The LLVM Compiler Infrastructure Organization}{Supervisors - William Moses, Johannes Doerfert}{
@@ -145,10 +156,9 @@
 	\vspace{-10pt}
 	\begin{tightitemize}
     \item \href{https://github.com/scikit-hep/awkward-1.0}{Awkward Array}: Library for nested, variable-sized data using NumPy-like idioms
-        \subitem - Implemented a source to source compiler to generate equivalent Python for a subset of C++.
-        \subitem - Designed a property based testing framework.
-        \subitem - Created a source to source compiler to generate equivalent parallel CUDA from specification (Python and type info).
-        \subitem - Enabled automatically parallization of user-written Awkward Array kernels.
+        \subitem - Implemented a source-to-source compiler from a C++ subset to equivalent Python, with property-based testing.
+        \subitem - Created a source-to-source compiler to generate equivalent parallel CUDA from specification (Python and type info).
+        \subitem - Enabled automatic parallelization of user-written Awkward Array kernels.
 	\end{tightitemize}
 } \vspace{4pt}\\
 \ExperienceEntry{\textbf{{\href{https://iris-hep.org/}{IRIS-HEP}} and \href{https://diana-hep.org/}{DIANA-HEP} - Fellow}}{June, 2018 - September, 2018; June, 2019 - September, 2019}{Fermi National Accelerator Laboratory and Princeton University}{Supervisor - Jim Pivarski}{
@@ -174,11 +184,9 @@
 \item N.Saha, {\textbf{P.Das}}, H.N.Saha, {\href{https://www.inderscienceonline.com/doi/abs/10.1504/IJAPR.2018.094819}{``Authorship Attribution of Short Texts using a Multi Layer Perceptron''}}, International Journal of Applied Pattern Recognition, 2018 Vol. 5 No. 3, Pages 251-259, DOI: 10.1504/IJAPR.2018.10016100.
 \end{tightitemize}
 
-\newpage
-
 \Section{Preprints under submission}
 \begin{tightitemize}
-\item \textbf{P.Das}, A.Dias, A.Xhebraj, A.Pelenitsyn, K.Sundararajah, M.Kulkarni, {\href{https://arxiv.org/abs/2407.00829}{``SABLE: Staging Blocked Evaluation of Sparse Matrix Computations''}}.
+\item \textbf{P.Das}, A.Basareh, A.Pelenitsyn, K.Sundararajah, M.Kulkarni, B.Delaware, {\href{https://arxiv.org/abs/2407.00829}{``Bring Your Own Formats and Kernels: Composable Abstractions for Sparse Matrix Computation''}}.
 \end{tightitemize}
 
 \Section{Other Open Source Contributions}
@@ -209,7 +217,7 @@
 \vspace{-4pt}
 \textbf{CS 307: Software Engineering} - Purdue University \hfill{Spring 2025, Fall 2025}
 
-\textbf{CS 354: Operating Systems} - Purdue University \hfill{Fall 2022, Spring 2023, Fall 2023, Spring 2024, Fall 2024}
+\textbf{CS 354: Operating Systems} - Purdue University \hfill{Fall 2022 - Fall 2024, Spring 2026}
 
 \textbf{CS 240: Programming in C} - Purdue University \hfill{Fall 2021, Spring 2022}
 \vspace{-6pt}
@@ -219,9 +227,9 @@
 %
 \Section{Programming Languages and Tools}
 \vspace{-4pt}
-\textbf{Experienced:} Python, CUDA
+\textbf{Experienced:} Python, CUDA, XLA
 
-\textbf{Familiar:} C, C++, Java, Scala, Coq, Bash, \LaTeX, Swift, WebAssembly, Triton
+\textbf{Familiar:} C, C++, Java, Scala, Coq, Bash, \LaTeX, Swift, WebAssembly, MLIR
 \vspace{-6pt}
 
 %
@@ -237,7 +245,7 @@
 %
 % Presentations
 %
-\Section{Invited talks at Conferences}
+\Section{Talks at Conferences}
 \small{\begin{tightitemize}
 \item Specializing Data Access in a Distributed File System (GPCE) \hfill 2024
 \item \href{https://youtu.be/mxI9fYbpndI}{GSoC Experience - Enzyme} (\href{https://llvm.swoogo.com/2021devmtg/}{LLVM Developers' Meeting}) \hfill{2021}
@@ -248,6 +256,7 @@
 
 \Section{Invited talks at Research Groups}
 \small{\begin{tightitemize}
+\item Staging Blocked Evaluation of Sparse Matrix Computations (\href{https://purduepl.github.io/seminars/2026/2026-4-16-seminar}{PurPL Seminar}) \hfill{2026}
 \item \href{https://indico.cern.ch/event/946427/contributions/3976986/attachments/2094014/3519161/IRIS-HEP-Fellow-Awkward.pdf}{Language Transformations for the Awkward Array library} (\href{https://indico.cern.ch/event/946427/}{IRIS-HEP Fellow Presentations}) \hfill{2020}
 \item CUDA backend for the Awkward Array project (\href{https://liberty.princeton.edu/}{Princeton University Liberty Research Group}) \hfill{2020}
 \item \href{https://indico.cern.ch/event/840667/contributions/3527109/attachments/1908764/3153297/uproot-irisfellow-final.pdf}{Writing TTrees with uproot} (\href{https://indico.cern.ch/event/840667/}{IRIS-HEP Topical Meeting: Summer student project presentations}) \hfill{2019}
