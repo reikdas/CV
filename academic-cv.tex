@@ -9,7 +9,6 @@
 
 \usepackage[hmargin=1cm, vmargin=1cm]{geometry}
 \usepackage[hidelinks]{hyperref}
-\usepackage[absolute]{textpos} %TPHorizontal....
 \usepackage{anyfontsize} % to control fonts
 \usepackage{setspace} % to control the spacing between lines
 \usepackage{pbox}
@@ -64,16 +63,6 @@
 \newcommand{\Line}{
 \noindent\rule{\textwidth}{0.4pt}}
 
-\setlength{\TPHorizModule}{1mm}
-\setlength{\TPVertModule}{1mm}
-\textblockorigin{0mm}{5mm}
-\newcommand{\lastupdated}{
-    \begin{textblock}{100}(130,0)
-    \fontsize{6pt}{8pt}
-    Last updated on \today
-    \end{textblock}
-}
-
 \newenvironment{tightitemize}
 {
     \vspace{-\topsep}
@@ -90,8 +79,6 @@
 %
 \begin{document}
 
-\lastupdated
-
 %
 % Name
 %
@@ -104,16 +91,17 @@
 \vspace{-45pt} \begin{spacing}{1}
 \PersonalEntry{\textbullet{} Email}{\href{mailto:das160@purdue.edu}{das160@purdue.edu}}
 \PersonalEntry{\textbullet{} GitHub}{\urlstyle{same}\url{https://github.com/reikdas}}
+\PersonalEntry{\textbullet{} Website}{\href{https://reikdas.github.io}{reikdas.github.io}}
 \end{spacing}
 \vspace{-13pt}
 
 %
 % Education
 %
-\vspace{10pt}
+\vspace{4pt}
 \Section{Education}
 \vspace{-4pt}
-\EducationEntry{\textbf{Purdue University}}{August, 2021 - Present}{PhD in Computer Science (Advisors - Milind Kulkarni, Ben Delaware)}{
+\EducationEntry{\textbf{Purdue University}}{August, 2021 - May, 2027 (Expected)}{PhD in Computer Science (Advisors - Milind Kulkarni, Ben Delaware)}{
     \vspace{-10pt}
     \hspace{30pt}Research interests - Compilers, Automatic parallelization, Sparse tensors, High performance computing
   }\\
@@ -131,15 +119,16 @@
 \ExperienceEntry{\textbf{ML Performance (Google Cloud) - Student Researcher}}{May, 2026 - August, 2026}{Google}{}{
     \vspace{-23pt}
     \begin{tightitemize}
-        \item XLA TPU compiler: Built out a \textit{fast} static profiler plugin estimating cycles from LLO graphs without running on TPUs
-            \subitem - Broadened HLO operation coverage (e.g. all-reduce) and added support for pipeline and collective emitters.
+        \item XLA TPU compiler: Built out an XLA plugin estimating TPU cycles of HLO ops without actually running on TPUs
+            \subitem - Broadened HLO op coverage (e.g. all-reduce) and added support for more LLO emitters (pipeline, collectives).
             \subitem - Reduced delta against measured TPU runs on Goose, Gemini, and YouTube workloads from over 50\% to $\sim$5\%.
+            \subitem - Sped up static estimation by implementing compiler passes such as loop fast-forwarding.
         \end{tightitemize}
 }\vspace{4pt}\\
 \ExperienceEntry{\textbf{SwiftUI - Compiler Intern}}{May, 2023 - August, 2023}{Apple}{}{
     \vspace{-23pt}
     \begin{tightitemize}
-        \item Swift compiler: Worked on the Swift compiler motivated by SwiftUI
+        \item Swift compiler: Extended the compiler and runtime to retarget SwiftUI to a new IR
             \subitem - Extended Swift's code generation and runtime, with LLVM patches, to lower SwiftUI to a new target IR.
             \subitem - Integrated an interpreter into Swift's runtime, enabling live updates of SwiftUI views from newly loaded code.
             \subitem - Implemented dynamic loading and symbol resolution of system shared libraries for interpreted code.
@@ -148,7 +137,7 @@
 \ExperienceEntry{\textbf{Google Summer of Code - Student}}{June, 2021 - August, 2021}{The LLVM Compiler Infrastructure Organization}{Supervisors - William Moses, Johannes Doerfert}{
     \vspace{-10pt} \begin{tightitemize}
     \item \href{https://enzyme.mit.edu/}{Enzyme}: LLVM Pass to perform automatic differentiation of statically analyzable LLVM IR
-        \subitem - Integrated custom derivatives of several BLAS (Basic Linear Algebra Subprograms) functions into Enzyme.
+        \subitem - Integrated custom derivatives of several BLAS functions into Enzyme.
         \subitem - Wrote an LLVM pass to inline function definitions from bitcode files into LLVM IR.
     \end{tightitemize}
 }\vspace{4pt}\\
@@ -211,7 +200,7 @@
         	\subitem - Optimized codebase to facilitate interoperability
     \end{tightitemize}
 }
-\vspace{-3pt}
+\vspace{-10pt}
 
 \Section{Teaching Experience (Teaching Assistant)}
 \vspace{-4pt}
