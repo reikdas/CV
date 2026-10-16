@@ -13,6 +13,21 @@
 \usepackage{setspace} % to control the spacing between lines
 \usepackage{pbox}
 \usepackage{needspace} % keep section headers with their content
+\usepackage{enumitem} % lists without LaTeX's default vertical padding
+
+%
+% Vertical rhythm
+%
+% All spacing between sections and entries is set here; the body of the
+% document should not need any \vspace. If something needs a nudge after
+% rendering, prefer adjusting these lengths over adding one-off skips.
+%
+\newlength{\SectionAbove} % tightening between a section's last line and the next header rule
+\setlength{\SectionAbove}{-3.5pt}
+\newlength{\SectionBelow} % tightening between a header's bottom rule and the section's first line
+\setlength{\SectionBelow}{-1.5pt}
+\newlength{\EntrySep}     % extra space between consecutive entries within a section
+\setlength{\EntrySep}{4pt}
 
 \newlength{\spacebox} % define a new length
 \settowidth{\spacebox}{8888888888}          % Box to align text
@@ -23,56 +38,55 @@
     \mbox{#2} \par
 }
 
-\newcommand{\EducationEntry}[4]{
-    \noindent\mbox{#1} \hfill
-    \mbox{#2} \\
-    \indent
-    \mbox{\textit{#3}} \vspace{5pt}\\
-    \parbox[t][\height][c]{\textwidth}{\small{#4}}
-	\vspace{-14pt}
-}
+% Every entry ends with \EntrySep so consecutive entries are evenly spaced.
+% \Section removes a trailing one, so the gap before a header stays uniform
+% regardless of whether the preceding content was an entry, a list or text.
+\newif\ifEntryPending
+\newcommand{\EntryEnd}{\par\vskip\EntrySep\global\EntryPendingtrue}
 
-\newcommand{\ExperienceEntry}[5]{
-    \noindent\mbox{#1} \hfill
-    \mbox{#2} \\
+% \EducationEntry{institution}{dates}{degree}{note} -- degree and note may be empty
+\newcommand{\EducationEntry}[4]{%
+    \noindent\mbox{#1}\hfill\mbox{#2}\par
     \if\relax\detokenize{#3}\relax\else
-    \mbox{#3}\\
+        \noindent\hspace*{\parindent}\mbox{\textit{#3}}\par
     \fi
-    \indent
-    \mbox{#4} \vspace{5pt}\\
-    \parbox[t][\height][c]{\textwidth}{\small{#5}}
-	\vspace{-1pt}
+    \if\relax\detokenize{#4}\relax\else
+        \noindent\hspace*{2\parindent}{\small #4}\par
+    \fi
+    \EntryEnd
 }
 
-\newcommand{\Section}[1]{
- %   \vspace{5pt}
- %   \noindent\hangindent=0.5cm\hangafter=0
- %   \textbf{\fontsize{20}{20}\selectfont #1} \par
- %   \vspace{-5pt}
- %   \noindent\rule{\textwidth}{0.4pt} \par
- %   \vspace{5pt}
-    \Needspace*{4\baselineskip}
-    \Line \par
-    \vspace{1pt}
-    \textbf{\fontsize{13}{13}\selectfont #1} \par
-    \vspace{-7pt}
-    \Line \par
-    \vspace{3pt}
+% \ExperienceEntry{title}{dates}{organization}{supervisors}{body} -- organization and supervisors may be empty
+\newcommand{\ExperienceEntry}[5]{%
+    \noindent\mbox{#1}\hfill\mbox{#2}\par
+    \if\relax\detokenize{#3}\relax\else
+        \noindent\mbox{#3}\par
+    \fi
+    \if\relax\detokenize{#4}\relax\else
+        \noindent\hspace*{\parindent}\mbox{#4}\par
+    \fi
+    {\small #5\par}%
+    \EntryEnd
 }
 
-\newcommand{\Line}{
-\noindent\rule{\textwidth}{0.4pt}}
+\newcommand{\Section}[1]{%
+    \par
+    \ifEntryPending\vskip-\EntrySep\global\EntryPendingfalse\fi
+    \Needspace*{3\baselineskip}%
+    \vspace{\SectionAbove}%
+    \Line\par
+    \textbf{\fontsize{13}{13}\selectfont #1}\par
+    \vspace{-7pt}% tuck the bottom rule up under the title
+    \Line\par
+    \vspace{\SectionBelow}%
+}
+
+\newcommand{\Line}{%
+    \noindent\rule{\textwidth}{0.4pt}}
 
 \newenvironment{tightitemize}
-{
-    \vspace{-\topsep}
-    \begin{itemize}
-        \itemsep1pt \parskip0pt \parsep0pt
-}
-{
-    \end{itemize}
-    \vspace{-\topsep}
-}
+    {\begin{itemize}[topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=1pt]}
+    {\end{itemize}}
 
 %
 % Document Environment
@@ -80,85 +94,66 @@
 \begin{document}
 
 %
-% Name
+% Name and contact details (the contact block is pulled up to sit beside the name)
 %
 \textbf{\fontsize{25}{25}\selectfont Pratyush Das}
-\vspace{0.7cm}
 
-%
-% Personal Entries
-%
-\vspace{-45pt} \begin{spacing}{1}
+\vspace{-25pt}
+\begin{spacing}{1}
 \PersonalEntry{\textbullet{} Email}{\href{mailto:das160@purdue.edu}{das160@purdue.edu}}
 \PersonalEntry{\textbullet{} GitHub}{\urlstyle{same}\url{https://github.com/reikdas}}
 \PersonalEntry{\textbullet{} Website}{\href{https://reikdas.github.io}{reikdas.github.io}}
 \end{spacing}
-\vspace{-13pt}
 
 %
 % Education
 %
-\vspace{4pt}
 \Section{Education}
-\vspace{-4pt}
-\EducationEntry{\textbf{Purdue University}}{August, 2021 - May, 2027 (Expected)}{PhD in Computer Science (Advisors - Milind Kulkarni, Ben Delaware)}{
-    \vspace{-10pt}
-    \hspace{30pt}Research interests - Compilers, Automatic parallelization, Sparse tensors, High performance computing
-  }\\
-\EducationEntry{\textbf{Institute of Engineering \& Management, Kolkata (MAKAUT)}}{August, 2017 - May, 2021}{Bachelor of Technology in Computer Science and Engineering}{
-    \vspace{-10pt}
-    \hspace{30pt}Awarded the Director's Award for Best Scientific Mind
-}
-\vspace{-7pt}
+\EducationEntry{\textbf{Purdue University}}{August, 2021 - May, 2027 (Expected)}{PhD in Computer Science (Advisors - Milind Kulkarni, Ben Delaware)}{Research interests - Compilers, Automatic parallelization, Sparse tensors, High performance computing}
+\EducationEntry{\textbf{Institute of Engineering \& Management, Kolkata (MAKAUT)}}{August, 2017 - May, 2021}{Bachelor of Technology in Computer Science and Engineering}{Awarded the Director's Award for Best Scientific Mind}
 
 %
 % Professional Experience
 %
 \Section{Experience}
-\vspace{-4pt}
 \ExperienceEntry{\textbf{ML Performance (Google Cloud) - Student Researcher}}{May, 2026 - August, 2026}{Google}{}{
-    \vspace{-23pt}
     \begin{tightitemize}
         \item XLA TPU compiler: Built out an XLA plugin estimating TPU cycles of HLO ops without actually running on TPUs
             \subitem - Broadened HLO op coverage (e.g. all-reduce) and added support for more LLO emitters (pipeline, collectives).
-            \subitem - Reduced delta against measured TPU runs on Goose, Gemini, and YouTube workloads from over 50\% to $\sim$5\%.
+            \subitem - Reduced delta against measured TPU runs on Gemini and YouTube workloads from over 50\% to $\sim$5\%.
             \subitem - Sped up static estimation by implementing compiler passes such as loop fast-forwarding.
-        \end{tightitemize}
-}\vspace{4pt}\\
+    \end{tightitemize}
+}
 \ExperienceEntry{\textbf{SwiftUI - Compiler Intern}}{May, 2023 - August, 2023}{Apple}{}{
-    \vspace{-23pt}
     \begin{tightitemize}
         \item Swift compiler: Extended the compiler and runtime to retarget SwiftUI to a new IR
             \subitem - Extended Swift's code generation and runtime, with LLVM patches, to lower SwiftUI to a new target IR.
             \subitem - Integrated an interpreter into Swift's runtime, enabling live updates of SwiftUI views from newly loaded code.
             \subitem - Implemented dynamic loading and symbol resolution of system shared libraries for interpreted code.
-        \end{tightitemize}
-}\vspace{4pt}\\
-\ExperienceEntry{\textbf{Google Summer of Code - Student}}{June, 2021 - August, 2021}{The LLVM Compiler Infrastructure Organization}{Supervisors - William Moses, Johannes Doerfert}{
-    \vspace{-10pt} \begin{tightitemize}
-    \item \href{https://enzyme.mit.edu/}{Enzyme}: LLVM Pass to perform automatic differentiation of statically analyzable LLVM IR
-        \subitem - Integrated custom derivatives of several BLAS functions into Enzyme.
-        \subitem - Wrote an LLVM pass to inline function definitions from bitcode files into LLVM IR.
     \end{tightitemize}
-}\vspace{4pt}\\
+}
+\ExperienceEntry{\textbf{Google Summer of Code - Student}}{June, 2021 - August, 2021}{The LLVM Compiler Infrastructure Organization}{Supervisors - William Moses, Johannes Doerfert}{
+    \begin{tightitemize}
+        \item \href{https://enzyme.mit.edu/}{Enzyme}: LLVM Pass to perform automatic differentiation of statically analyzable LLVM IR
+            \subitem - Integrated custom derivatives of several BLAS functions into Enzyme.
+            \subitem - Wrote an LLVM pass to inline function definitions from bitcode files into LLVM IR.
+    \end{tightitemize}
+}
 \ExperienceEntry{\textbf{{\href{https://iris-hep.org/}{IRIS-HEP}} - Fellow}}{June, 2020 - September, 2020}{Princeton University}{Supervisor - Jim Pivarski}{
-	\vspace{-10pt}
-	\begin{tightitemize}
-    \item \href{https://github.com/scikit-hep/awkward-1.0}{Awkward Array}: Library for nested, variable-sized data using NumPy-like idioms
-        \subitem - Implemented a source-to-source compiler from a C++ subset to equivalent Python, with property-based testing.
-        \subitem - Created a source-to-source compiler to generate equivalent parallel CUDA from specification (Python and type info).
-        \subitem - Enabled automatic parallelization of user-written Awkward Array kernels.
-	\end{tightitemize}
-} \vspace{4pt}\\
+    \begin{tightitemize}
+        \item \href{https://github.com/scikit-hep/awkward-1.0}{Awkward Array}: Library for nested, variable-sized data using NumPy-like idioms
+            \subitem - Implemented a source-to-source compiler from a C++ subset to equivalent Python, with property-based testing.
+            \subitem - Created a source-to-source compiler to generate equivalent parallel CUDA from specification (Python and type info).
+            \subitem - Enabled automatic parallelization of user-written Awkward Array kernels.
+    \end{tightitemize}
+}
 \ExperienceEntry{\textbf{{\href{https://iris-hep.org/}{IRIS-HEP}} and \href{https://diana-hep.org/}{DIANA-HEP} - Fellow}}{June, 2018 - September, 2018; June, 2019 - September, 2019}{Fermi National Accelerator Laboratory and Princeton University}{Supervisor - Jim Pivarski}{
-	\vspace{-10pt}
-	\begin{tightitemize}
-    \item \href{https://github.com/scikit-hep/uproot3.git}{Uproot}: Python implementation of ROOT I/O, an open source file format storing over an exabyte of HEP data
-        \subitem - Enabled writing fundamental HEP data structures like TTrees and histograms to ROOT files.
-        \subitem - Uproot has become one of the most widely used HEP libraries.
-	\end{tightitemize}
-}\\
-\vspace{-20pt}
+    \begin{tightitemize}
+        \item \href{https://github.com/scikit-hep/uproot3.git}{Uproot}: Python implementation of ROOT I/O, an open source file format storing over an exabyte of HEP data
+            \subitem - Enabled writing fundamental HEP data structures like TTrees and histograms to ROOT files.
+            \subitem - Uproot has become one of the most widely used HEP libraries.
+    \end{tightitemize}
+}
 
 %
 % Publications
@@ -175,9 +170,7 @@
 \end{tightitemize}
 
 \Section{Other Open Source Contributions}
-\vspace{-2pt}
 \ExperienceEntry{\textit{Supervisor} - Vassil Vassilev}{November, 2019 - May, 2021}{}{}{
-    \vspace{-23pt}
     \begin{tightitemize}
     \item \textbf{\href{https://github.com/root-project/root}{ROOT}}: An open-source data analysis framework storing over an exabyte of data
         \subitem - Improvements to interpreter (rootcling)
@@ -186,52 +179,44 @@
     \item \textbf{\href{https://clang.llvm.org/}{Clang}}: C language family frontend for LLVM
         \subitem - Several patches to print type information of C++ template arguments
     \end{tightitemize}
-}\vspace{4pt}\\
+}
 \ExperienceEntry{\textit{Supervisors} - Jim Pivarski, Viktor Khristenko}{June, 2017 - August, 2017}{}{}{
-    \vspace{-23pt}
     \begin{tightitemize}
     \item \textbf{\href{https://github.com/diana-hep/spark-root}{spark-root}} - Apache Spark datasource for ROOT
-        	\subitem - Separated spark bindings from TTree reading code
-        \item \textbf{\href{https://github.com/diana-hep/spark-root}{root4j}} - Java implementation of ROOT file reader
-        	\subitem - Optimized codebase to facilitate interoperability
+        \subitem - Separated spark bindings from TTree reading code
+    \item \textbf{\href{https://github.com/diana-hep/spark-root}{root4j}} - Java implementation of ROOT file reader
+        \subitem - Optimized codebase to facilitate interoperability
     \end{tightitemize}
 }
-\vspace{-10pt}
 
 \Section{Teaching Experience (Teaching Assistant)}
-\vspace{-4pt}
 \textbf{CS 307: Software Engineering} - Purdue University \hfill{Spring 2025, Fall 2025}
 
 \textbf{CS 354: Operating Systems} - Purdue University \hfill{Fall 2022 - Fall 2024, Spring 2026}
 
 \textbf{CS 240: Programming in C} - Purdue University \hfill{Fall 2021, Spring 2022}
-\vspace{-6pt}
 
 %
 % Programming Skills
 %
 \Section{Programming Languages and Tools}
-\vspace{-4pt}
 \textbf{Experienced:} Python, CUDA, XLA
 
 \textbf{Familiar:} C, C++, Java, Scala, Coq, Bash, \LaTeX, Swift, WebAssembly, MLIR
-\vspace{-6pt}
 
 %
 % Workshops and Summer Schools
 %
 \Section{Summer Schools}
-\vspace{-4pt}
-\indent \EducationEntry{\textbf{{\href{https://www.cs.uoregon.edu/research/summerschool/summer21/index.php}{Oregon Programming Languages Summer School}}} - University of Oregon}{2021}{}{}\vspace{-15pt}\\
-\indent \EducationEntry{\textbf{{\href{https://codas-hep.org/}{Computational and Data Science for High Energy Physics}}} - Princeton University}{2019}{}{}\\
+\textbf{\href{https://www.cs.uoregon.edu/research/summerschool/summer21/index.php}{Oregon Programming Languages Summer School}} - University of Oregon \hfill{2021}
 
-\vspace{-34pt}
+\textbf{\href{https://codas-hep.org/}{Computational and Data Science for High Energy Physics}} - Princeton University \hfill{2019}
 
 %
 % Presentations
 %
 \Section{Talks at Conferences}
-\small{\begin{tightitemize}
+{\small\begin{tightitemize}
 \item Specializing Data Access in a Distributed File System (GPCE) \hfill 2024
 \item \href{https://youtu.be/mxI9fYbpndI}{GSoC Experience - Enzyme} (\href{https://llvm.swoogo.com/2021devmtg/}{LLVM Developers' Meeting}) \hfill{2021}
 \item \href{https://youtu.be/jClVsR6XfdI}{Python in High Energy Physics} (\href{https://scipy.in/2019}{SciPy India}, \href{https://us.pycon.org/2020/}{PyCon USA}) \hfill{2019, 2020}
@@ -240,7 +225,7 @@
 \end{tightitemize}}
 
 \Section{Invited talks at Research Groups}
-\small{\begin{tightitemize}
+{\small\begin{tightitemize}
 \item Staging Blocked Evaluation of Sparse Matrix Computations (\href{https://purduepl.github.io/seminars/2026/2026-4-16-seminar}{PurPL Seminar}) \hfill{2026}
 \item \href{https://indico.cern.ch/event/946427/contributions/3976986/attachments/2094014/3519161/IRIS-HEP-Fellow-Awkward.pdf}{Language Transformations for the Awkward Array library} (\href{https://indico.cern.ch/event/946427/}{IRIS-HEP Fellow Presentations}) \hfill{2020}
 \item CUDA backend for the Awkward Array project (\href{https://liberty.princeton.edu/}{Princeton University Liberty Research Group}) \hfill{2020}
